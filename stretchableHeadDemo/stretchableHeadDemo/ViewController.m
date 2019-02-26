@@ -15,7 +15,7 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
 static NSString *identifier = @"cellIdentifier";
-static CGFloat headHeight = 275.f;
+static CGFloat headHeight = 275-64;
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -33,7 +33,7 @@ static CGFloat headHeight = 275.f;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     //背景图片
-    _topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, headHeight)];
+    _topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 275)];
     _topImageView.image = [UIImage imageNamed:@"风景"];
     [self.view addSubview:_topImageView];
     
@@ -53,7 +53,7 @@ static CGFloat headHeight = 275.f;
     tableView.dataSource = self;
     
     //headView
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, headHeight - 64)];
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, headHeight)];
     headView.backgroundColor = [UIColor clearColor];
     tableView.tableHeaderView = headView;
     
